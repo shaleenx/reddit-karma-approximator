@@ -85,9 +85,12 @@ for vertex in g.vs:
 
 f = open("original_karmas", "w")
 
+i = 0
+
 for vertex in g.vs:
     kar = getKarma(vertex["name"])
-    print(vertex["name"],vertex["karma"], kar)
+    print(vertex["name"],vertex["karma"], kar, "\tStatus:", str(i*100/len(g.vs))+"% done")
+    i += 1
     f.write(vertex["name"]+"\t"+str(kar)+"\n")   # for once
 
 f.close()
