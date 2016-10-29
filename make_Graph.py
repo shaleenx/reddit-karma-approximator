@@ -83,8 +83,14 @@ for vertex in g.vs:
 for vertex in g.vs:
     I(vertex, subreddit_score)
 
+f = open("original_karmas", "w")
+
 for vertex in g.vs:
-    print(vertex["name"],vertex["karma"], getKarma(vertex["name"]))
+    kar = getKarma(vertex["name"])
+    print(vertex["name"],vertex["karma"], kar)
+    f.write(vertex["name"]+"\t"+str(kar)+"\n")   # for once
+
+f.close()
 
 # Calculate karma:
 #
